@@ -8,8 +8,8 @@ export default function Header() {
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
 
   return (
-    <header className="flex justify-between items-center p-4 bg-white relative">
-      <nav className="flex space-x-4">
+    <header className="flex justify-between items-center p-4 bg-white relative ms-10 mt-2">
+      <nav className="flex space-x-10">
         <div
           className="relative"
           onMouseEnter={() => setIsSubMenuOpen(true)}
@@ -29,10 +29,10 @@ export default function Header() {
           width={100}
           height={100}
           priority
-          className="h-20 w-20 md:h-24 md:w-24 lg:h-32 lg:w-32"
+          className="h-20 w-20 md:h-24 md:w-24 lg:h-28 lg:w-28 xl:h-32 xl:w-32"
         />
       </div>
-      <div className="flex items-center space-x-4">
+      <div className="flex items-center space-x-4 me-10">
         <button className="relative">
           <svg
             className="w-6 h-6 text-gray-700 hover:text-gray-900"
