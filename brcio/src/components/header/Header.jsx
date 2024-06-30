@@ -1,28 +1,22 @@
 'use client';
 import { useState } from 'react';
 import Image from 'next/image';
-import Logo from '/public/br_logo-black-lightback'; 
+import Logo from '/public/br_logo-black-lightback.png';
+import Submenu from '../submenu/Submenu';
 
-const SubMenu = () => (
-  <div className="absolute left-0 top-full mt-2 w-48 bg-white shadow-lg rounded-lg z-10">
-    <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Submenu 1</a>
-    <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Submenu 2</a>
-    <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Submenu 3</a>
-  </div>
-);
 export default function Header() {
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
 
   return (
-    <header className="flex justify-between items-center p-4 bg-gray-100 relative">
+    <header className="flex justify-between items-center p-4 bg-white relative">
       <nav className="flex space-x-4">
-        <div 
+        <div
           className="relative"
           onMouseEnter={() => setIsSubMenuOpen(true)}
           onMouseLeave={() => setIsSubMenuOpen(false)}
         >
-          <a href="#" className="text-gray-700 hover:text-gray-900">Home</a>
-          {isSubMenuOpen && <SubMenu />}
+          <a href="#" className="text-gray-700 hover:text-gray-900 focus:text-gray-900 cursor-pointer">Home</a>
+          {isSubMenuOpen && <Submenu />}
         </div>
         <a href="#" className="text-gray-700 hover:text-gray-900">Shop</a>
         <a href="#" className="text-gray-700 hover:text-gray-900">About</a>
@@ -38,7 +32,7 @@ export default function Header() {
           className="h-20 w-20 md:h-24 md:w-24 lg:h-32 lg:w-32"
         />
       </div>
-      <div className="flex items-center">
+      <div className="flex items-center space-x-4">
         <button className="relative">
           <svg
             className="w-6 h-6 text-gray-700 hover:text-gray-900"
@@ -56,9 +50,28 @@ export default function Header() {
           </svg>
           <span className="absolute top-0 right-0 inline-block w-2 h-2 bg-red-600 rounded-full"></span>
         </button>
+        <button className="relative">
+          <svg
+            className="w-6 h-6 text-gray-700 hover:text-gray-900"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4.318 6.318a4.5 4.5 0 010-6.364 4.5 4.5 0 016.364 0L12 2.586l1.318-1.318a4.5 4.5 0 016.364 6.364l-7 7a.5.5 0 01-.707 0l-7-7z"
+            />
+          </svg>
+        </button>
       </div>
     </header>
   );
 }
+
+
+
 
 
